@@ -1,0 +1,72 @@
+:host {
+  --background: #26374D;
+}
+
+ion-content {
+  --background: #26374D;
+  color: white;
+}
+
+ion-toolbar {
+  --background: #1e293b;
+  --color: white;
+}
+
+.bold-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.section-header h2 {
+  color: white;
+  font-size: 1.1rem;
+  margin: 8px 0 0 4px;
+  font-weight: bold;
+}
+
+.filter-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 12px 0 16px 4px;
+
+  label {
+    color: white;
+    font-weight: 500;
+  }
+
+  .select-wrapper {
+    background-color: white;
+    border-radius: 6px;
+    padding: 4px 8px;
+    min-width: 160px;
+  }
+
+  ion-select {
+    --color: white;
+    --placeholder-color: white;
+    --placeholder-opacity: 1;
+    --padding-start: 0px;
+    --padding-end: 0px;
+    --min-height: 30px;
+    --background: transparent;
+    width: 100%;
+  }
+}
+
+ion-card {
+  background: #f8f9fa;
+  margin-top: 12px;
+  color: #1e1e1e;
+
+  h3 {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+}
+
+.btn-tambah {
+  margin-bottom: 1rem;
+  --background: #1e293b;
+  --color: white;
+}

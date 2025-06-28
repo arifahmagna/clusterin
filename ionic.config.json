@@ -1,0 +1,7 @@
+{
+  "name": "Project-Clusterin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

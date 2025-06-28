@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar class="minmal-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/warga/tabs/layanan" text="" icon="arrow-back-outline"></ion-back-button>
+      <div class="header-main custom-background">Form Pengaduan</div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding form-wrapper">
+  <ion-card class="tamu-card">
+    <div class="form-card">
+      <label>Tanggal</label>
+      <ion-input [value]="formData.tanggal" readonly></ion-input>
+
+      <div class="section-label">Detail Pengaduan</div>
+
+      <label>Jenis Pengaduan</label>
+      <ion-input [(ngModel)]="formData.judul"></ion-input>
+
+      <label>Deskripsi</label>
+      <ion-textarea [(ngModel)]="formData.deskripsi" autoGrow="true"></ion-textarea>
+
+      <label>Bukti Pendukung</label>
+      <input type="file" (change)="onFileSelected($event)" />
+
+      <ion-button expand="block" class="submit-btn" (click)="submitForm()">
+        Kirim
+      </ion-button>
+    </div>
+  </ion-card>
+</ion-content>
+
+<div class="modal-overlay" *ngIf="showSuccessModal">
+  <div class="modal-content">
+    <div class="icon-wrapper">
+      <ion-icon name="checkmark" class="icon-check"></ion-icon>
+    </div>
+    <h2 class="title">Pengaduan Anda Berhasil<br />Dikirim</h2>
+    <p class="subtitle">Form pengaduan anda berhasil dikirim.</p>
+
+    <ion-button expand="block" class="btn-primary white-font" (click)="goToPengaduan()">Kembali</ion-button>
+    <a (click)="goToHome()" class="btn-link">Kembali ke Beranda</a>
+  </div>
+</div>

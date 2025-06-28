@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="bold-font ion-text-center white-font">Layanan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="layanan-container">
+    <h5 class="layanan-judul">Layanan Tersedia</h5>
+
+    <div class="layanan-card layanan-permohonan" (click)="goToPermohonan()">
+      <ion-icon name="document-text-outline" class="layanan-icon"></ion-icon>
+      <h3>Permohonan</h3>
+      <p>Ajukan Surat Domisili Pengantar RT/RW dan lainnya.</p>
+    </div>
+
+    <div class="layanan-card layanan-pengaduan" (click)="goToPengaduan()">
+      <ion-icon name="megaphone-outline" class="layanan-icon"></ion-icon>
+      <h3>Pengaduan</h3>
+      <p>Laporkan masalah lingkungan atau fasilitas umum lainnya.</p>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,146 @@
+
+.minmal-toolbar {
+  --min-height: 90px;
+  --background: linear-gradient(135deg, #26374D, #1F2A40);
+  --color: #ffffff;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 5px 5px;
+}
+
+.header-main {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.form-wrapper {
+  padding: 1rem;
+}
+
+
+.tamu-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  background-color: #dde6ed;
+  border: 1px solid #d1d5db;
+  font-family: 'Inter', sans-serif;
+}
+
+
+label {
+  font-weight: 600;
+  color: #536d82;
+  margin-top: 1rem;
+  display: block;
+  margin-bottom: 2px;
+}
+
+
+ion-input,
+ion-select,
+ion-textarea {
+  margin-top: 0.5rem;
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+  --border-radius: 8px;
+  --background: #f9fafb;
+  --border-color: #9db2bf;
+  --color: #26374d;
+}
+
+
+.submit-btn {
+  margin-top: 1.5rem;
+  --background: #536D82;
+  --color: #ffffff;
+  --border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  --background: #1a3e6b;
+}
+
+
+.section-label {
+  background-color: #9DB2BF;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  margin: 1.5rem 0 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  font-weight: bold;
+  color: #26374d;
+  width: fit-content;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  width: 90%;
+  max-width: 360px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.icon-wrapper {
+  background-color: #22c55e;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  margin: 0 auto 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-check {
+  font-size: 32px;
+  color: #fff;
+}
+
+.title {
+  color: #1e293b;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.btn-primary {
+  --background: #1e293b;
+  --border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.btn-link {
+  color: #1e293b;
+  font-size: 14px;
+  text-decoration: underline;
+}

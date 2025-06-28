@@ -1,0 +1,335 @@
+.container {
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  padding: 20px; 
+}
+
+app-kunjungan,
+app-shift {
+  display: block; 
+  margin-bottom: 20px; 
+}
+
+section {
+  position: relative; 
+}
+
+
+.laporan-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.laporan-tanggal {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #7f8c8d;
+}
+
+
+ion-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.toolbar-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    width: 120px; 
+}
+
+ion-searchbar {
+    flex: 1;
+    margin-right: 10px;
+}
+
+ion-select {
+    width: 150px;
+}
+
+ion-list {
+    margin-top: 15px;
+}
+
+ion-item {
+    border-radius: 8px;
+    margin: 8px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+ion-label h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+ion-label p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+}
+
+
+.tombol-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.toggle-danger {
+    --handle-background-color: red !important;
+    --background-checked: red !important;
+}
+
+.toggle-success {
+    --handle-background-color: green !important;
+    --background-checked: green !important;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+    background-color: #fff !important;
+    border-radius: 10px;
+}
+
+.form-control,
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.status-checkin {
+    color: green;
+    font-weight: bold;
+}
+
+.status-checkout {
+    color: red;
+    font-weight: bold;
+}
+
+.judul-kunjungan {
+    padding: 10px 15px;
+    margin-top: 10px;
+}
+
+.judul-kunjungan h3 {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 5px;
+    color: black;
+    font-weight: medium;
+}
+
+.judul-kunjungan p {
+    font-size: 15px;
+    color: #333;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #26374D !important;
+    color: white;
+    border: none;
+}
+
+.btn-secondary {
+    background-color: #6c757d !important;
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+
+.filter-container {
+  background-color: #f0f0f0; 
+  padding: 10px;
+  border-radius: 5px; 
+  margin-bottom: 10px; 
+}
+.filter-container input.form-control {
+  background-color: #FFFFFF; 
+  border: 1px solid #D1D5DB ; 
+  color: #374151; 
+
+}
+.filter-container input.form-control:focus {
+  border-color: #2e6aaa; 
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); 
+}
+
+.filter-container input.form-control::placeholder {
+  color: #374151; 
+  opacity: 1; 
+}
+
+.tombol-teks {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+}
+.tombol-teks:hover {
+  color: #0056b3;
+}
+
+.card-kunjungan {
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    margin-top: -0rem;
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .container {
+    padding: 12px; 
+  }
+
+  .toolbar-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  ion-searchbar,
+  ion-select {
+    width: 100% !important;
+    margin-right: 0;
+  }
+
+  .filter-container {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .form-control,
+  .form-select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .judul-kunjungan {
+    padding: 8px 10px;
+  }
+
+  .judul-kunjungan h3 {
+    font-size: 16px;
+  }
+
+  .judul-kunjungan p {
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 14px;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  ion-item {
+    margin: 6px;
+  }
+
+  ion-label h2 {
+    font-size: 16px;
+  }
+
+  ion-label p {
+    font-size: 13px;
+  }
+
+  .tombol-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card-kunjungan {
+    margin-bottom: 2rem;
+    padding: 10px;
+  }
+}
+
+.card-kunjungan {
+  border-left: 6px solid #ccc;
+  margin-bottom: 12px;
+}
+
+.card-checkin {
+  border-left-color: #28a745; 
+  background-color: #eafbe8;
+}
+
+.card-checkout {
+  border-left-color: #dc3545; 
+  background-color: #fceaea;
+}
+
+.status-checkin {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.status-checkout {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+
+

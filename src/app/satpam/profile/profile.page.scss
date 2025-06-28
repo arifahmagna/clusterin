@@ -1,0 +1,160 @@
+ion-content {
+  --background: #fff;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+
+h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.profile-card {
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.profile-picture img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-picture ion-button {
+  margin-top: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.profile-picture ion-button:hover {
+  transform: scale(1.05);
+  background-color: #0056b3;
+}
+
+p {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+ion-list {
+  background: none;
+}
+
+ion-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+
+ion-label {
+  font-weight: bold;
+  font-size: 15px;
+  flex: 1;
+  min-width: 120px;
+  color: #333;
+}
+
+ion-text {
+  flex: 2;
+  font-size: 14px;
+  color: #555;
+  text-align: right;
+}
+
+ion-badge {
+  margin-left: 10px;
+}
+
+ion-icon {
+  font-size: 24px;
+  color: #555;
+}
+
+ion-card {
+  padding: 15px;
+  border-radius: 10px;
+}
+
+ion-button[fill="clear"] {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.clickable-card {
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.clickable-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Toolbar */
+.minmal-toolbar {
+  --min-height: 90px;
+  --background: linear-gradient(135deg, #26374D, #1F2A40);
+  --color: #ffffff;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 5px 5px;
+}
+
+ion-title {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  .profile-picture img {
+    width: 85px;
+    height: 85px;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  ion-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  ion-label, ion-text {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  ion-text {
+    color: #666;
+  }
+  .email-verifikasi-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+ion-badge {
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+  
+}

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar style="--min-height: 80px; --background: #26374D; --color: #ffffff;" class="minmal-toolbar">
+    <ion-title>Tambah Tamu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding form-wrapper">
+  <p class="text-title">Form Input Tamu</p>
+
+  <form [formGroup]="tamuForm" (ngSubmit)="submitForm()">
+    <ion-card class="tamu-card">
+      <div class="form-card">
+        <div class="section-label">Informasi Tamu</div>
+
+        <ion-label>Nama Lengkap</ion-label>
+        <ion-input formControlName="fullname" type="text" placeholder="Nama tamu"></ion-input>
+
+        <ion-label>NIK</ion-label>
+        <ion-input formControlName="nik" type="text" placeholder="NIK tamu"></ion-input>
+
+        <ion-label>Alamat</ion-label>
+        <ion-input formControlName="address" type="text" placeholder="Alamat asal tamu"></ion-input>
+
+        <ion-label>Tujuan</ion-label>
+        <ion-input formControlName="destination" type="text" placeholder="Tujuan rumah"></ion-input>
+
+        <ion-label>Alasan Kunjungan</ion-label>
+        <ion-input formControlName="reason" type="text" placeholder="Alasan berkunjung"></ion-input>
+
+        <ion-label>Waktu Masuk</ion-label>
+        <ion-input formControlName="checkin" type="time"></ion-input>
+
+        <ion-label>Estimasi Lama Kunjungan</ion-label>
+        <ion-input formControlName="estimation" type="text" placeholder="Misal: 1 jam, 2 jam"></ion-input>
+
+        <ion-button expand="block" type="submit" class="submit-btn" [disabled]="tamuForm.invalid">
+          Konfirmasi Masuk
+        </ion-button>
+      </div>
+    </ion-card>
+  </form>
+</ion-content>

@@ -1,0 +1,52 @@
+<ion-header class="tambah-shift-header">
+  <ion-toolbar>
+    <ion-title>Tambah Shift</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding tambah-shift-content">
+
+  <ion-item class="tambah-shift-item">
+    <ion-label position="stacked">Nama Shift Baru</ion-label>
+    <ion-input [(ngModel)]="newShift.name" placeholder="Masukkan Nama Shift"></ion-input>
+  </ion-item>
+
+  <ion-item class="tambah-shift-item">
+    <ion-label position="stacked">Petugas</ion-label>
+    <ion-input [(ngModel)]="newShift.petugas" placeholder="Nama Petugas"></ion-input>
+  </ion-item>
+
+  <ion-item class="tambah-shift-item">
+    <ion-label position="stacked">Tanggal Mulai</ion-label>
+    <ion-input type="date" [(ngModel)]="newShift.startDate"></ion-input>
+  </ion-item>
+
+  <ion-item class="tambah-shift-item">
+    <ion-label position="stacked">Tanggal Selesai</ion-label>
+    <ion-input type="date" [(ngModel)]="newShift.endDate"></ion-input>
+  </ion-item>
+
+  <ion-item class="tambah-shift-item">
+    <ion-label position="stacked">Jam Mulai</ion-label>
+    <ion-input type="time" [(ngModel)]="newShift.startTime"></ion-input>
+  </ion-item>
+
+  <ion-item class="tambah-shift-item">
+    <ion-label position="stacked">Jam Selesai</ion-label>
+    <ion-input type="time" [(ngModel)]="newShift.endTime"></ion-input>
+  </ion-item>
+
+  <ion-item class="tambah-shift-item">
+    <ion-label position="stacked">Lokasi</ion-label>
+    <ion-input [(ngModel)]="newShift.location" placeholder="Contoh: Lobby Utama"></ion-input>
+  </ion-item>
+
+  <ion-item class="tambah-shift-item">
+    <ion-label position="stacked">Catatan</ion-label>
+    <ion-textarea [(ngModel)]="newShift.notes" placeholder="Catatan Tambahan"></ion-textarea>
+  </ion-item>
+
+  <ion-button expand="block"  (click)="saveShift()">Simpan Shift</ion-button>
+  <ion-button expand="block"  (click)="cancel()">Batal</ion-button>
+
+</ion-content>

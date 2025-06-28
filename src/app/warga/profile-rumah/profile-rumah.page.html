@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="ion-text-center white-font">Profil Rumah</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="!showSuccessModal">
+  <h2 class="section-title">Identitas Rumah</h2>
+
+  <div class="card-profile">
+
+    <div class="info-text">
+      <div class="info-item">
+        <label>Nomor Rumah</label>
+        <div class="value-row">
+          <ion-input *ngIf="editMode" [(ngModel)]="rumah.nomor" class="custom-background"></ion-input>
+          <span *ngIf="!editMode">{{ rumah.nomor }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>Status Kepemilikan</label>
+        <div class="value-row">
+          <ion-select *ngIf="editMode" [(ngModel)]="rumah.status" class="custom-background">
+            <ion-select-option value="Milik Sendiri">Milik Sendiri</ion-select-option>
+            <ion-select-option value="Sewa">Sewa</ion-select-option>
+          </ion-select>
+          <span *ngIf="!editMode">{{ rumah.status }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-button expand="block" fill="outline" (click)="toggleEdit()">
+    {{ editMode ? 'Simpan' : 'Edit' }}
+  </ion-button>
+
+  <ion-button expand="block" fill="clear" (click)="kembali()" color="medium">
+    Kembali
+  </ion-button>
+</ion-content>
+
+<div *ngIf="showSuccessModal" class="overlay">
+  <div class="success-container">
+    <ion-icon name="checkmark-circle" class="success-icon"></ion-icon>
+    <h2 class="success-title">Perubahan Informasi Rumah<br><b>Berhasil</b></h2>
+    <p class="success-text">Perubahan informasi rumah anda berhasil dilakukan.</p>
+
+    <ion-button expand="block" class="btn-primary" (click)="kembaliKeProfil()">Kembali ke Profil Saya</ion-button>
+    <ion-button fill="clear" class="btn-secondary" (click)="kembaliKeBeranda()">Kembali ke Beranda</ion-button>
+  </div>
+</div>

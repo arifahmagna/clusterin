@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="ion-text-center white-font">Informasi Keluarga</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="!showSuccessModal">
+  <h2 class="section-title">Identitas & Kependudukan</h2>
+
+  <div class="card-profile">
+    <div class="info-text">
+      <div class="info-item">
+        <label>Kepala Keluarga</label>
+        <div class="value-row">
+          <ion-input class="custom-background" *ngIf="editMode" [(ngModel)]="data.kepalaKeluarga" required></ion-input>
+          <span *ngIf="!editMode">{{ data.kepalaKeluarga }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>Jumlah Anggota Keluarga</label>
+        <div class="value-row">
+          <ion-input class="custom-background" *ngIf="editMode" type="number" [(ngModel)]="data.jumlahAnggota"></ion-input>
+          <span *ngIf="!editMode">{{ data.jumlahAnggota }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Anggota Keluarga</h2>
+
+  <div class="card-profile">
+    <div class="info-text" *ngFor="let anggota of data.anggotaKeluarga; let i = index">
+      <h3 class="subsection-title">Anggota Keluarga {{ i + 1 }}</h3>
+
+      
+      <ion-button *ngIf="editMode && !anggota.fromUserTable" expand="block" color="danger" fill="outline" (click)="hapusAnggota(i)">
+        Hapus Anggota Ini
+      </ion-button>
+
+      <div class="info-item">
+        <label>Nama</label>
+        <div class="value-row">
+          <ion-input
+            class="custom-background"
+            *ngIf="editMode"
+            [readonly]="anggota.fromUserTable"
+             [ngClass]="{ 'input-disabled': anggota.fromUserTable }"
+            [(ngModel)]="anggota.fullname"
+            
+            required>
+          </ion-input>
+          <span *ngIf="!editMode">{{ anggota.fullname || '-' }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>Alamat</label>
+        <div class="value-row">
+          <ion-input
+            class="custom-background"
+            *ngIf="editMode"
+            [readonly]="anggota.fromUserTable"
+             [ngClass]="{ 'input-disabled': anggota.fromUserTable }"
+            [(ngModel)]="anggota.address"
+            
+            required>
+          </ion-input>
+          <span *ngIf="!editMode">{{ anggota.address || '-' }}</span>
+        </div>
+      </div>
+
+      <hr *ngIf="i < data.anggotaKeluarga.length - 1" />
+    </div>
+
+    <ion-button *ngIf="editMode" expand="block" fill="outline" (click)="tambahAnggota()">
+      + Tambah Anggota Keluarga
+    </ion-button>
+  </div>
+
+ 
+  <ion-button expand="block" fill="outline" (click)="toggleEdit()">
+    {{ editMode ? 'Simpan' : 'Edit' }}
+  </ion-button>
+
+  <!-- TOMBOL KEMBALI -->
+  <ion-button expand="block" fill="clear" (click)="kembali()" color="medium">
+    Kembali
+  </ion-button>
+</ion-content>
+
+<!-- MODAL SUCCESS -->
+<div *ngIf="showSuccessModal" class="overlay">
+  <div class="success-content">
+    <ion-icon name="checkmark-circle" class="success-icon"></ion-icon>
+    <h2 class="success-title">Perubahan Informasi Keluarga<br><b>Berhasil</b></h2>
+    <p class="success-text">Perubahan informasi keluarga anda berhasil dilakukan.</p>
+
+    <ion-button expand="block" class="btn-primary" (click)="kembaliKeProfil()">Kembali ke Profil Saya</ion-button>
+    <ion-button fill="clear" class="btn-secondary" (click)="kembaliKeBeranda()">Kembali ke Beranda</ion-button>
+  </div>
+</div>

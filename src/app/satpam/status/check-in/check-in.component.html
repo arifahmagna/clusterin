@@ -1,0 +1,24 @@
+<ion-card *ngFor="let guest of tamuMasuk">
+  <ion-card-header>
+    <ion-card-title>{{ guest.fullname }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-label>
+  <p><strong>No Identitas:</strong> {{ guest.nik }}</p>
+  <p><strong>Masuk:</strong> {{ guest.checkin }}</p>
+  <p><strong>Estimasi:</strong> {{ guest.estimation }}</p> 
+  <p><strong>Alamat Tujuan:</strong> {{ guest.destination }}</p>
+  <p><strong>Tujuan:</strong> {{ guest.reason }}</p>
+</ion-label>
+
+      </ion-item>
+      <ion-item lines="none">
+        <ion-button color="success" expand="block" class="ion-margin-top" (click)="checkout(guest)">
+          Validasi Keluar
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>

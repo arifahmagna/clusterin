@@ -1,0 +1,46 @@
+<ion-content class="register-page" fullscreen="true">
+  <form (ngSubmit)="register()">
+    <div class="register-container">
+      <h2 class="title">Register</h2>
+
+      <h3 class="data">Data Pribadi</h3>
+
+      <ion-item class="input-nama">
+        <ion-input name="fullname" [(ngModel)]="form.fullname" placeholder="Nama Lengkap" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item class="input-NIK">
+        <ion-input name="nik" [(ngModel)]="form.nik" placeholder="NIK" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item class="input-NIK">
+        <ion-input name="nik_kk" [(ngModel)]="form.nik_kk" placeholder="NIK Kepala Keluarga" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item class="input-alamat">
+        <ion-input name="address" [(ngModel)]="form.address" placeholder="Alamat Rumah" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item class="input-telp">
+        <ion-input name="whatsapp" [(ngModel)]="form.whatsapp" placeholder="Whatsapp" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item class="input-gender">
+        <ion-select name="gender" [(ngModel)]="form.gender" placeholder="Jenis Kelamin" required>
+          <ion-select-option value="Laki-Laki">Laki-Laki</ion-select-option>
+          <ion-select-option value="Perempuan">Perempuan</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="input-password">
+        <ion-input name="password" [(ngModel)]="form.password" placeholder="Password" type="password"></ion-input>
+      </ion-item>
+
+      <ion-button type="submit" expand="block" class="register-button">Register</ion-button>
+
+      <div class="register-link">
+        Sudah Punya Akun? <a routerLink="/login">Login</a>
+      </div>
+    </div>
+  </form>
+</ion-content>

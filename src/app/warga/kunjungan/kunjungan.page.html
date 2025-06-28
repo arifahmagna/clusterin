@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar class="minmal-toolbar">
+    <ion-title class="ion-text-center">Kunjungan Tamu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding background-dark">
+
+  <div class="search-bar custom-background">
+    <ion-input [(ngModel)]="searchTerm" placeholder="Cari Nama ....." class="input-search" type="text">
+    </ion-input>
+    
+  </div>
+
+ 
+  <div class="filter-section">
+    <label class="filter-label custom-background">Filter Status</label>
+    <ion-select [(ngModel)]="selectedStatus" class="custom-background">
+      <ion-select-option value="Semua">Semua</ion-select-option>
+      <ion-select-option value="Masuk">Masuk</ion-select-option>
+      <ion-select-option value="Keluar">Keluar</ion-select-option>
+    </ion-select>
+  </div>
+
+
+  <div *ngFor="let tamu of filteredGuests(); let i = index" class="tamu-card" (click)="toggleDetail(i)">
+    <div class="tamu-summary">
+      <b>{{ tamu.fullname }}</b>
+      <span [ngClass]="{'status-checkin': tamu.status === 'Masuk', 'status-checkout': tamu.status === 'Keluar'}">
+        -- {{ tamu.status }}
+      </span>
+      <div class="tanggal">{{ tamu.created_at | date:'dd-MM-yyyy HH:mm' }}</div>
+    </div>
+
+    <div *ngIf="selectedIndex === i" class="tamu-detail">
+      <p><b>Jam Masuk:</b> {{ tamu.checkin }}</p>
+      <p><b>Jam Keluar:</b> {{ tamu.checkout }}</p>
+      <p><b>Tujuan:</b> {{ tamu.destination }}</p>
+      <p><b>Keterangan:</b> {{ tamu.reason }}</p>
+    </div>
+  </div>
+
+</ion-content>

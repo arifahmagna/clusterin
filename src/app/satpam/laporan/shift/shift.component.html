@@ -1,0 +1,41 @@
+<ion-card-header>
+  <ion-card-title class="laporan-title">Laporan Shift</ion-card-title>
+
+</ion-card-header>
+
+<div class="filter-container custom-background">
+  <input
+    type="text"
+    placeholder="Cari nama satpam..."
+    [(ngModel)]="searchTerm"
+    class="form-control"
+  />
+  <input
+    type="date"
+    [(ngModel)]="selectedDate"
+    class="form-control mt-2"
+  />
+</div>
+
+<ion-card
+  *ngFor="let shift of filteredShift"
+  [ngClass]="{
+    'card-on': shift.status?.toLowerCase() === 'on',
+    'card-off': shift.status?.toLowerCase() === 'off'
+  }"
+  class="shift-card"
+>
+  <ion-card-header>
+    <ion-card-title>
+      {{ shift.user?.fullname || 'Satpam' }} - Shift {{ shift.shift }}
+    </ion-card-title>
+    <ion-card-subtitle>Status: {{ shift.status }}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p><strong>Mulai:</strong> {{ shift.mulai | date: 'short' }}</p>
+    <p><strong>Selesai:</strong> {{ shift.selesai ? (shift.selesai | date: 'short') : '-' }}</p>
+    <p><strong>Alamat:</strong> {{ shift.user?.address }}</p>
+  </ion-card-content>
+</ion-card>
+

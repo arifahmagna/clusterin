@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="ion-text-center white-font">Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+
+
+  <h2 class="section-title">Informasi Akun</h2>
+
+
+  <div class="card-profile">
+
+    <div class="photo-vertical">
+      <ng-container *ngIf="profile.foto; else defaultFoto">
+        <img [src]="profile.foto" class="profile-photo" />
+      </ng-container>
+
+      <ng-template #defaultFoto>
+        <ion-icon name="person-circle-outline" class="profile-photo default-icon"></ion-icon>
+      </ng-template>
+
+      <input type="file" hidden #fileInput accept="image/*" (change)="onChangeFoto($event)" />
+      <ion-button size="small" fill="outline" class="btn-ganti-foto" (click)="fileInput.click()">
+        Ganti Foto
+      </ion-button>
+      <p class="note">Ukuran foto maksimal 5mb</p>
+    </div>
+
+
+
+    <div class="info-text">
+      <div class="info-item">
+        <label>Nama</label>
+        <div class="value-row">
+          <ion-input *ngIf="editMode" [(ngModel)]="profile.fullname"></ion-input>
+          <span *ngIf="!editMode">{{ profile.fullname }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>NIK Pribadi</label>
+        <div class="value-row">
+          <ion-input *ngIf="editMode" [(ngModel)]="profile.nik"></ion-input>
+          <span *ngIf="!editMode">{{ profile.nik }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>NIK Kepala Keluarga</label>
+        <div class="value-row">
+          <ion-input *ngIf="editMode" [(ngModel)]="profile.nik_kk"></ion-input>
+          <span *ngIf="!editMode">{{ profile.nik_kk }}</span>
+
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>Whatsapp</label>
+        <div class="value-row">
+          <ion-input *ngIf="editMode" [(ngModel)]="profile.whatsapp"></ion-input>
+          <span *ngIf="!editMode">{{ profile.whatsapp }}</span>
+        </div>
+      </div>
+    
+
+      <div class="info-item">
+        <label>Alamat</label>
+        <div class="value-row">
+          <ion-input *ngIf="editMode" [(ngModel)]="profile.address"></ion-input>
+          <span *ngIf="!editMode">{{ profile.address }}</span>
+        </div>
+      </div>
+    
+
+      <div class="info-item">
+        <label>Jenis Kelamin</label>
+        <div class="value-row">
+          <ion-input *ngIf="editMode" [(ngModel)]="profile.gender"></ion-input>
+          <span *ngIf="!editMode">{{ profile.gender }}</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <label>Role</label>
+        <div class="value-row">
+          <span>{{ profile.role }}</span>
+        </div>
+      </div>
+
+
+      <div class="info-item">
+        <label>Status</label>
+        <div class="value-row">
+          <span>{{ profile.status }}</span>
+        </div>
+      </div>
+
+    </div>
+    <br />
+    <ion-button expand="block" fill="outline" (click)="toggleEdit()">
+      {{ editMode ? 'Simpan' : 'Edit' }}
+    </ion-button>
+
+  </div>
+
+
+  <h2 class="section-title">Informasi Lainnya</h2>
+
+
+  <div class="section-lainnya custom-background">
+    <div class="lain-item" *ngFor="let info of informasiLain" (click)="bukaHalaman(info.route)">
+      <ion-icon [name]="info.icon" class="item-icon"></ion-icon>
+
+      <div class="item-info">
+        <h2>{{ info.title }}</h2>
+      </div>
+      <ion-icon name="chevron-forward-outline" class="item-arrow"></ion-icon>
+    </div>
+  </div>
+  <ion-button expand="block" color="danger" (click)="logout()" class="logout-button">
+    Logout
+  </ion-button>
+
+</ion-content>

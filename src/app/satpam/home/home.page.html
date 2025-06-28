@@ -1,0 +1,167 @@
+ <ion-app>
+ <!-- Header  -->
+  <ion-header>
+    <ion-toolbar  style="--min-height: 40px; --background: #26374D; --color: #ffffff;" class="minmal-toolbar">
+  <div class="greeting-container">
+  <img src="assets/profile2.png" alt="Foto Profil" class="profile-img">
+  <div class="greeting-text">
+    <p class="halo">Selamat datang,</p>
+    <h2 class="nama">{{ currentUser?.fullname?.split(' ')[0] || '...' }}</h2>
+  </div>
+  <span class="badge-role">{{ currentUser?.role || '...' }}</span>
+</div>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Content -->
+  <ion-content class="ion-padding content-bg">
+
+   
+
+  <ion-card-content style="margin-top: 2rem;">
+    <app-simple-sweeper></app-simple-sweeper>
+  </ion-card-content>
+
+   <!-- Info Cards -->
+<ion-grid>
+   <ion-label><strong>Ringkasan Operasional</strong></ion-label>
+  <ion-row>
+
+    <ion-col size="4">
+      <ion-card class="info-card">
+        <ion-card-content class="card-content">
+          <ion-icon name="people-circle-outline" class="card-icon"></ion-icon>
+          <h2 class="card-detail">{{ tamuHariIni }}</h2>
+          <small class="text-muted">Tamu Hari Ini</small>
+          
+        </ion-card-content>
+      </ion-card>
+
+    </ion-col>
+  <ion-col size="4">
+  <ion-card class="info-card">
+    <ion-card-content class="card-content">
+      <ion-icon name="hourglass-outline" class="card-icon"></ion-icon>
+
+      <p class="card-detail">
+        Shift {{ shiftInfo?.shift || '-' }}
+      </p>
+
+      <small class="text-muted" *ngIf="shiftInfo?.mulai">
+        Mulai: {{ shiftInfo.mulai | date: 'shortTime' }}
+      </small>
+
+      
+    </ion-card-content>
+  </ion-card>
+</ion-col>
+
+
+
+    <ion-col size="4">
+      <ion-card class="info-card">
+        <ion-card-content class="card-content">
+          <ion-icon name="shield-checkmark-outline" class="card-icon-status"></ion-icon>
+           <h5 class="card-detail">{{ currentUser?.status || '-' }}</h5>
+          <p class="card-title-status">Status</p>   
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<!-- Pilihan Menu -->
+<ion-grid>
+  <ion-label><strong>Pilihan Menu</strong></ion-label>
+  <ion-row>
+    <ion-col size="6" >
+      <ion-card class="quick-access-card menu-laporan ion-text-center" [routerLink]="['/tabs/laporan']" button="true">
+        <ion-button shape="round" class="icon-circle">
+          <ion-icon name="clipboard-outline"></ion-icon>
+        </ion-button>
+
+        <ion-card-header>
+          <ion-card-title class="card-title-menu">Laporan</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="card-content-menu">
+          Lihat laporan tamu & shift
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="6">
+      <ion-card class="quick-access-card menu-shift ion-text-center" 
+[routerLink]="['/shift']">
+        <ion-button shape="round" class="icon-circle">
+          <ion-icon name="calendar-outline"></ion-icon>
+        </ion-button>
+        <ion-card-header>
+          <ion-card-title class="card-title-menu">Shift Kerja</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="card-content-menu">
+          Jadwal & pergantian shift
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="6">
+      <ion-card class="quick-access-card menu-status ion-text-center"[routerLink]="['/status']">
+        <ion-button shape="round" class="icon-circle">
+          <ion-icon name="sync-outline"></ion-icon>
+        </ion-button>
+        <ion-card-header>
+          <ion-card-title class="card-title-menu">Status</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="card-content-menu">
+          Update status tamu
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="6">
+      <ion-card class="quick-access-card menu-tambah ion-text-center" [routerLink]="['/tabs/input-tamu']">
+        <ion-button shape="round" class="icon-circle">
+          <ion-icon name="person-add-outline"></ion-icon>
+        </ion-button>
+        <ion-card-header>
+          <ion-card-title class="card-title-menu">Tambah Tamu</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="card-content-menu">
+          Daftarkan tamu baru
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+    <!-- Aktivitas Terakhir -->
+     <ion-item-divider style="background: #26374D;" >
+        <ion-label class="label-activity"><strong class="white-font">Aktivitas Terakhir</strong></ion-label>
+       <ion-button fill="clear" size="small" slot="end" (click)="lihatSemuaAktivitas()" class="white-font">Lihat Semua</ion-button>
+
+      </ion-item-divider>
+
+    <ion-card *ngFor="let item of aktivitas" (click)="item.isOpen = !item.isOpen" class="activity-card">
+  <ion-card-header>
+    <ion-card-title>
+      {{ item.nama }} — 
+      <span [style.color]="item.statusColor === 'success' ? 'green' : 'darkred'" style="font-weight: bold;">
+        {{ item.status }}
+      </span>
+    </ion-card-title>
+    <ion-card-subtitle>{{ item.tanggal }}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content *ngIf="item.isOpen">
+    <p><strong>alamat:</strong> {{ item.alamat }}</p>
+    <p><strong>tujuan:</strong> {{ item.tujuan }}</p>
+    <p><strong>alamatTujuan:</strong> {{ item.alamatTujuan }}</p>
+    <p><strong>estimasi:</strong> {{ item.estimasi }}</p>
+    <p><strong>waktuMasuk:</strong> {{ item.waktuMasuk }}</p>
+    <p><strong>waktuKeluar:</strong> {{ item.waktuKeluar }}</p>
+    <p><strong>keterangan:</strong> {{ item.keterangan }}</p>
+  </ion-card-content>
+</ion-card>
+
+  </ion-content>
+</ion-app> 

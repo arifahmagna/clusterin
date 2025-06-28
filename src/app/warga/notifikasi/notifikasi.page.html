@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="warga/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <div class="judul-notifikasi">Notifikasi</div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="notifikasi-group" *ngFor="let key of getSortedKeys()">
+    <h3 class="custom-background">{{ key }}</h3>
+
+    <div *ngFor="let item of notifikasiTerfilter[key]" class="notifikasi-item" (click)="goToDetail(item)">
+      <div class="notifikasi-icon" [ngClass]="item.kategori.toLowerCase()">
+        <ion-icon [name]="getIconByJenis(item.kategori)"></ion-icon>
+      </div>
+
+      <div class="notifikasi-info">
+        <h4 class="judul custom-background">{{ item.title }}</h4>
+        <p class="deskripsi">{{ item.desc }}</p>
+
+        <div class="notifikasi-footer"> 
+          <span class="badge" [ngClass]="getBadgeClass(item.status)">{{ item.status }}</span>
+          <span class="waktu">{{ item.waktu | date: 'dd MMM yyyy, HH:mm' }}"></span>
+        </div>
+      </div>
+
+      <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
+    </div>
+  </div>
+</ion-content>

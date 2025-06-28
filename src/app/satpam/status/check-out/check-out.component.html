@@ -1,0 +1,28 @@
+<ion-card *ngFor="let tamu of tamuKeluar">
+  <ion-card-header>
+    <ion-card-title>{{ tamu.fullname }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-label>
+          <p><strong>No Identitas:</strong> {{ tamu.nik }}</p>
+          <p><strong>Masuk:</strong> {{ tamu.checkin }} WIB</p>
+          <p><strong>Keluar:</strong> {{ tamu.checkout }} WIB</p>
+          <p><strong>Alamat Tujuan:</strong> {{ tamu.destination }}</p>
+          <p><strong>Tujuan:</strong> {{ tamu.reason }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-button color="light" expand="block" class="ion-margin-top" disabled>
+          Selesai
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+<ion-text *ngIf="tamuKeluar.length === 0">
+  <p class="ion-text-center">Belum ada tamu yang checkout.</p>
+</ion-text>

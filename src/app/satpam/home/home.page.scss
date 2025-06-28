@@ -1,0 +1,333 @@
+
+.info-card {
+  width: 100%;
+  max-width: 110px; 
+  height: 120px;
+  padding: 6px;
+  border-radius: 20px;
+  text-align: center;
+  margin: auto;
+}
+
+.card-icon {
+  font-size: 28px;
+  color: #26374D;
+  display: block;
+  margin: 0 auto;
+}
+.card-icon-status {
+  font-size: 28px;
+  color: #12c743;
+  display: block;
+  margin: 0 auto;
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: medium;
+
+  .status{
+     margin-top: 15px;
+  }
+}
+
+
+
+.card-detail {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+
+}
+
+.card-time{
+  font-size: 12px;
+  font-weight: medium;
+  margin-top: 1px;
+}
+
+ion-content {
+  height: auto !important;
+}
+
+
+.quick-access-card {
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  height: 180px;
+  
+}
+
+.menu-laporan {
+  background-color: #e3f2fd; 
+    color: #0d47a1;
+   .icon-circle{
+     background-color: #1e88e5;
+   }
+}
+
+.menu-shift {
+  background-color: #e8f5e9; 
+   color: #1b5e20;
+  .icon-circle{
+      background-color: #43a047;
+   }
+}
+
+.menu-status {
+  background-color: #fff3e0; 
+    color: #e65100;
+      .icon-circle{
+       background-color: #fb8c00;
+   }
+}
+
+.menu-tambah {
+  background-color: #ffebee; 
+   color: #b71c1c;
+     .icon-circle{
+       background-color: #e53935;
+   }
+}
+
+.quick-access-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px auto;
+  --background: transparent;
+  --padding-start: 0;
+  --padding-end: 0;
+   
+    --ion-color-base: transparent; 
+
+}
+
+.icon-circle ion-icon {
+  font-size: 24px;
+  color: white;
+}
+
+
+
+
+.card-title-menu {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: #222;
+  font-size: 13px;
+  text-align: center;
+}
+
+.card-content {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0;
+  line-height: 1.3;
+}
+
+.menu-laporan .icon-circle {
+  border-color: #2563EB; 
+  
+}
+
+.menu-laporan ion-icon {
+  color: #d2ddf5;
+}
+
+
+.menu-shift .icon-circle {
+  border-color: #16A34A; 
+}
+
+.menu-shift ion-icon {
+  color: #b7e3c7;
+}
+
+
+.menu-status .icon-circle {
+  border-color: #D97706; 
+}
+
+.menu-status ion-icon {
+  color: #e3c7a7;
+}
+
+
+.menu-tambah .icon-circle {
+  border-color: #DC2626; 
+}
+
+.menu-tambah ion-icon {
+  color: #efc1c1;
+}
+
+
+
+
+
+.quick-access-card {
+  width: 100%;
+  max-width: 170px; 
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+
+}
+
+.quick-access-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-content-menu {
+  font-size: 12px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+
+// styling toolbar 
+.greeting-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+ 
+ 
+ 
+}
+
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.greeting-text {
+  flex-grow: 1;
+}
+
+.halo {
+  margin: 0;
+  font-size: 14px;
+  color: #223047;
+}
+
+.nama {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #223047;
+}
+
+.badge-role {
+  border: 1px solid #A0A4AD;
+  color: #3A4350;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+// toolbar
+.minimal-toolbar {
+  min-height: 40px; 
+  --min-height: 30px;
+  padding: 0;
+}
+
+
+
+.label-activity {
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+}
+
+ion-item-divider {
+  --background: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 12px 0 4px;
+  display: flex;
+  align-items: center;
+}
+
+ion-item-divider ion-button {
+  font-size: 0.8rem;
+  margin-right: 4px;
+  --color: #0077b6;
+}
+
+.activity-card {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  margin: 10px 16px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.activity-card:hover {
+  transform: scale(1.01);
+}
+
+ion-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+ion-card-subtitle {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+ion-card-content p {
+  font-size: 0.85rem;
+  margin: 4px 0;
+  color: #333;
+}
+
+ion-card-content p strong {
+  color: #555;
+  width: 100px;
+  display: inline-block;
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+  .info-card-wrapper,
+  .quick-access-wrapper {
+    justify-content: center;
+  }
+
+  .info-card,
+  .quick-access-card {
+    margin: 8px auto;
+  }
+}
+
+
+
+
+
+

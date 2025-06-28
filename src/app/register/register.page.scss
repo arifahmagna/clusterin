@@ -1,0 +1,112 @@
+.register-page{
+     --background:#26374D !important;
+
+     .register-container{
+          display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 24px;
+        height: 100vh;
+     }
+
+     .title{
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+         margin-bottom: 24px;
+        margin-left: 20px;
+     }
+
+     .data{
+        color: white;
+        font-size: 20px;
+        font-weight: medium;
+         margin-bottom: 20px;
+        margin-left: 20px;
+     }
+
+       .input-nama {
+      --background: #ffffff;
+      --border-radius: 12px;
+      margin-bottom: 10px;
+      height: 50px;
+      font-size: 16px;
+    
+    }
+
+        .input-email {
+      --background: #ffffff;
+      --border-radius: 12px;
+      margin-bottom: 10px;
+      height: 50px;
+      font-size: 16px;
+    
+    }
+
+        .input-password {
+      --background: #ffffff;
+      --border-radius: 12px;
+      margin-bottom: 10px;
+      height: 50px;
+      font-size: 16px;
+    
+    }
+
+        .input-NIK {
+      --background: #ffffff;
+      --border-radius: 12px;
+      margin-bottom: 10px;
+      height: 50px;
+      font-size: 16px;
+    
+    }
+
+        .input-alamat {
+      --background: #ffffff;
+      --border-radius: 12px;
+      margin-bottom: 10px;
+      height: 50px;
+      font-size: 16px;
+    
+    }
+
+        .input-telp {
+      --background: #ffffff;
+      --border-radius: 12px;
+      margin-bottom: 10px;
+      height: 50px;
+      font-size: 16px;
+    
+    }
+
+      .register-button{
+    --background: #ffffff;
+    --border-radius: 12px;
+    margin-bottom: 40px;
+    color: #201e1d;
+    width: 40%; 
+    --height: 60px;
+    margin-left: auto;
+    padding-top: 40px;
+
+    }
+
+    .register-link{
+            color: #ffffff;
+        text-align: center;
+        font-size: 14px;
+        margin-top: 100px;
+        
+        a{
+            color: #ffffff;
+            font-weight: bold;
+            
+        }
+    }
+
+
+
+
+
+
+}

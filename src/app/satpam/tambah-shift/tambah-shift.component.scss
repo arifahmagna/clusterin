@@ -1,0 +1,79 @@
+/* shift.page.scss */
+
+:host {
+  --ion-color-primary: #536D82; /* warna utama */
+  --ion-color-secondary: #90CAF9; /* biru muda */
+  font-family: 'Inter', sans-serif;
+}
+
+ion-toolbar {
+  --background: linear-gradient(135deg, #26374D, #1F2A40);
+  color: white;
+  font-weight: bold;
+}
+
+ion-title {
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+}
+
+ion-item {
+  margin-bottom: 12px;
+  border-radius: 8px;
+  --background: #f8f9fa;
+  --inner-padding-end: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+ion-label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+}
+
+ion-input,
+ion-datetime,
+ion-textarea {
+  font-size: 14px;
+  --padding-start: 10px;
+}
+
+// ion-button {
+//   --border-radius: 10px;
+//   font-weight: 600;
+//   letter-spacing: 0.5px;
+//   text-transform: none;
+// }
+
+// ion-button[color="medium"] {
+//   --background: #e0e0e0;
+//   color: #333;
+// }
+
+ion-button.save-button {
+  --background: linear-gradient(135deg, #3B82F6, #2563EB) !important; /* biru */
+  --color: white;
+  --box-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+ion-button.cancel-button {
+  --background: #9CA3AF !important; /* abu */
+  --color: white;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+
+/* Optional: Responsive padding */
+@media screen and (min-width: 768px) {
+  ion-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}

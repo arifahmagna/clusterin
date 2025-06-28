@@ -1,0 +1,138 @@
+/* ====== Header Styling ====== */
+ion-header {
+  --background: linear-gradient(135deg, #26374D, #1F2A40);
+  --color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ====== Section Title ====== */
+.section-title {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #f0f2f5;
+  color: #26374D;
+  border-radius: 8px;
+  margin: 1rem 1rem 1.5rem;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* ====== Card Styling ====== */
+.edit-card {
+  margin: 0 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  padding: 16px;
+}
+
+/* ====== Card Title ====== */
+.ion-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* ====== Item Container ====== */
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --highlight-height: 0;
+  margin-bottom: 12px;
+  --background: transparent;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* ====== Label Styling ====== */
+ion-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* ====== Important Indicator ====== */
+.red-star {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* ====== Input Fields ====== */
+ion-input,
+ion-select {
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+/* ====== Gender Label Special Case ====== */
+.label-jk {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* ====== Date Input ====== */
+.date {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ====== Button Container ====== */
+.btn-personal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px; /* Jarak antar tombol */
+  margin-top: 20px;
+}
+.btn-personal ion-button {
+  flex: 1; /* Biar tombol ukurannya sama besar */
+}
+
+/* ====== Buttons ====== */
+.btn-info {
+  background-color: #1D4ED8;
+  color: #ffffff;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.btn-tutup{
+   color: #3c4d64 !important;
+}
+
+.btn-back {
+  color: #3c4d64;
+  font-weight: bold;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #26374D;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.minmal-toolbar {
+    --min-height: 90px;
+    --background: linear-gradient(135deg, #26374D, #1F2A40);
+    --color: #ffffff;
+    font-weight: bold;
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 0px 5px 5px;
+
+}
+
+ion-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+     margin-top: 1rem;
+     font-weight: bold;
+}

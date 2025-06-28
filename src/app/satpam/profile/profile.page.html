@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar style="--min-height: 80px; --background: #26374D; --color: #ffffff;" class="minimal-toolbar">
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="profile-info-card">
+    <ion-card-content>
+      <h3>Informasi Akun</h3>
+
+      <!-- Bagian Foto Profil -->
+      <div class="profile-picture">
+        <ng-container *ngIf="userData.foto; else defaultFoto">
+          <img [src]="userData.foto" class="profile-photo" />
+        </ng-container>
+
+        <ng-template #defaultFoto>
+          <ion-icon name="person-circle-outline" class="profile-photo default-icon"></ion-icon>
+        </ng-template>
+      </div>
+      <input type="file" hidden #fileInput accept="image/*" (change)="onChangeFoto($event)" />
+      <ion-button size="small" fill="outline" class="btn-ganti-foto" (click)="fileInput.click()">
+        Ganti Foto
+      </ion-button>
+      <p class="note">Ukuran foto maksimal 5mb</p>
+
+      <!-- Informasi Akun -->
+      <ion-list *ngIf="!isEditMode">
+        <ion-item>
+          <ion-label>Nama Akun</ion-label>
+          <ion-text>{{ userData?.fullname }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>NIK</ion-label>
+          <ion-text>{{ userData?.nik }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>No. Handphone</ion-label>
+          <ion-text>{{ userData?.whatsapp }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Alamat</ion-label>
+          <ion-text>{{ userData?.address }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Jenis Kelamin</ion-label>
+          <ion-text>{{ userData?.gender }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Role</ion-label>
+          <ion-text>{{ userData?.role }}</ion-text>
+        </ion-item>
+      </ion-list>
+
+      <!-- Form Edit -->
+      <ion-list *ngIf="isEditMode">
+        <ion-item>
+          <ion-label position="stacked">Nama Akun</ion-label>
+          <ion-input [(ngModel)]="userData.fullname"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">NIK</ion-label>
+          <ion-input [(ngModel)]="userData.nik"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">No. Handphone</ion-label>
+          <ion-input [(ngModel)]="userData.whatsapp"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Alamat</ion-label>
+          <ion-input [(ngModel)]="userData.address"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Jenis Kelamin</ion-label>
+          <ion-select [(ngModel)]="userData.gender">
+            <ion-select-option value="Laki-Laki">Laki-Laki</ion-select-option>
+            <ion-select-option value="Perempuan">Perempuan</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+
+      <div class="button-group" style="margin-top: 16px;">
+        <ion-button *ngIf="!isEditMode" expand="block" color="primary" (click)="enableEdit()">Edit</ion-button>
+        <ion-button *ngIf="isEditMode" expand="block" color="success" (click)="saveChanges()">Simpan</ion-button>
+        <ion-button *ngIf="isEditMode" expand="block" color="medium" (click)="cancelEdit()">Kembali</ion-button>
+        <ion-button expand="block" color="danger" (click)="logout()">Logout</ion-button>
+
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

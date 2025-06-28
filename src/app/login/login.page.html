@@ -1,0 +1,27 @@
+<ion-content class="login-page" fullscreen="true">
+  <div class="login-container">
+    <h2 class="title">Login</h2>
+
+
+    <ion-item class="input-NIK">
+      <ion-input [(ngModel)]="nik" placeholder="NIK" type="text"></ion-input>
+    </ion-item>
+
+     <ion-item class="input-password">
+      <ion-input [(ngModel)]="password" placeholder="password" type="password"></ion-input>
+    </ion-item>
+
+    <div class="forgot-password">
+      <a (click)="openForgotPassword()">Lupa Password?</a>
+    </div>
+
+    <ion-button expand="full" (click)="login()" class="login-button">Login</ion-button>
+
+
+
+    <div class="register-link">
+      Belum Punya Akun? <a routerLink="/register">Daftar</a>
+    </div>
+
+  </div>
+</ion-content>

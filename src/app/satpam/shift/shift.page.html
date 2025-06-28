@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar class="minimal-toolbar">
+    <ion-buttons slot="start">
+      <ion-button class="white-back-button" routerLink="/tabs/home" aria-label="Kembali ke Beranda">
+        <ion-icon name="chevron-back-circle-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Pengaturan Shift</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <div class="container-shift">
+
+
+    <ion-card class="shift-card">
+      <ion-card-header>
+        <ion-card-title>Pilih Shift Anda</ion-card-title>
+        <ion-card-subtitle>Sesuaikan dengan jadwal kerja</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-select [(ngModel)]="selectedShift" placeholder="Pilih Shift">
+          <ion-select-option value="1">Shift 1 (06:00 - 18:00)</ion-select-option>
+          <ion-select-option value="2">Shift 2 (18:00 - 06:00)</ion-select-option>
+        </ion-select>
+      </ion-card-content>
+    </ion-card>
+
+    
+    <div class="header-section-shift">
+      <ion-button expand="block" color="success" (click)="startShift()" [disabled]="shiftStarted || !selectedShift" id="addShiftBtn">
+      Mulai Shift (ON)
+      </ion-button>
+    </div>
+    <div class="header-section-shift">
+      <ion-button expand="block" color="danger" (click)="endShift()" [disabled]="!shiftStarted" id="addShiftBtn">
+      Selesai Shift (OFF)
+      </ion-button>
+    </div>
+
+    <ion-card *ngIf="shiftStarted" class="shift-card active-shift">
+      <ion-card-header>
+        <ion-card-title>Shift Sedang Aktif</ion-card-title>
+        <ion-card-subtitle>Dimulai pada: {{ mulai | date: 'shortTime' }}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+
+
+
+
+    <ion-card *ngIf="successMsg" class="shift-card">
+      <ion-card-content>
+        <ion-text color="success">
+        {{ successMsg }}
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="errorMsg" class="shift-card">
+      <ion-card-content>
+        <ion-text color="danger">
+        {{ errorMsg }}
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>

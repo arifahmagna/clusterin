@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="ion-text-center white-font">Informasi Pribadi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="!showSuccessModal">
+  <div class="card-profile">
+    <div class="info-text">
+
+      <div class="info-item">
+        <label>NIK</label>
+        <div class="value-row">
+          <ion-input class="custom-background" *ngIf="editMode" [(ngModel)]="data.nik"></ion-input>
+          <span *ngIf="!editMode">{{ data.nik }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>Nama Lengkap</label>
+        <div class="value-row">
+          <ion-input class="custom-background" *ngIf="editMode" [(ngModel)]="data.namaLengkap"></ion-input>
+          <span *ngIf="!editMode">{{ data.namaLengkap }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>Tempat Lahir</label>
+        <div class="value-row">
+          <ion-input class="custom-background" *ngIf="editMode" [(ngModel)]="data.tempatLahir"></ion-input>
+          <span *ngIf="!editMode">{{ data.tempatLahir }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>Tanggal Lahir</label>
+        <div class="value-row">
+          <ion-input class="custom-background" *ngIf="editMode" type="date" [(ngModel)]="data.tanggalLahir"></ion-input>
+          <span *ngIf="!editMode">{{ data.tanggalLahir }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>Nomor HP</label>
+        <div class="value-row">
+          <ion-input class="custom-background" *ngIf="editMode" type="tel" [(ngModel)]="data.noHp"></ion-input>
+          <span *ngIf="!editMode">{{ data.noHp }}</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <label>Jenis Kelamin</label>
+        <div class="value-row custom-background">
+          <ion-select class="custom-background" *ngIf="editMode" [(ngModel)]="data.jenisKelamin">
+            <ion-select-option value="Laki-laki">Laki-laki</ion-select-option>
+            <ion-select-option  value="Perempuan">Perempuan</ion-select-option>
+          </ion-select>
+          <span *ngIf="!editMode">{{ data.jenisKelamin }}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <ion-button expand="block" fill="outline" (click)="toggleEdit()">
+    {{ editMode ? 'Simpan' : 'Edit' }}
+  </ion-button>
+
+  <ion-button expand="block" fill="clear" (click)="kembali()" color="medium">
+    Kembali
+  </ion-button>
+</ion-content>
+
+<!-- Modal Sukses -->
+<div *ngIf="showSuccessModal" class="overlay">
+  <div class="success-content">
+    <ion-icon name="checkmark-circle" class="success-icon"></ion-icon>
+    <h2 class="success-title">Perubahan Informasi Pribadi<br><b>Berhasil</b></h2>
+    <p class="success-text">Data anda telah berhasil disimpan.</p>
+
+    <ion-button expand="block" class="btn-primary" (click)="kembaliKeProfil()">Kembali ke Profil</ion-button>
+    <ion-button fill="clear" class="btn-secondary" (click)="kembaliKeBeranda()">Kembali ke Beranda</ion-button>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+
+.slide {
+  display: none;
+  position: relative;
+  width: 100%;
+  transition: opacity 0.5s ease;
+}
+
+.slide.active {
+  display: block;
+}
+
+.sweeper-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+   margin-top: -20px; 
+}
+
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.nav-button:hover {
+  background-color: rgba(0,0,0,0.7);
+}
+
+
+.nav-button:first-of-type {
+  left: 10px;
+}
+
+.nav-button:last-of-type {
+  right: 10px;
+}
+
+
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dots span {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dots span.active {
+  background-color: #333;
+}
+
+
+@media (max-width: 767px) {
+  .nav-button {
+    padding: 8px;
+  }
+
+  .dots span {
+    height: 10px;
+    width: 10px;
+    margin: 0 3px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .slide {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .nav-button {
+    padding: 16px;
+  }
+}

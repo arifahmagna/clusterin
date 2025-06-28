@@ -1,0 +1,181 @@
+.laporan-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.laporan-tanggal {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #7f8c8d;
+}
+
+.shift-info-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.shift-info-header p {
+  margin: 2px 0;
+  font-size: 0.85rem;
+}
+
+.shift-status-hadir {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.shift-status-absen {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+span.shift-hadir {
+  color: #2ecc71;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+span.shift-absen {
+  color: #e74c3c;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.laporan-divider {
+  border: none;
+  height: 1px;
+  background-color: #dcdcdc;
+  margin: 20px 0;
+  width: 100%;
+}
+
+ion-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 10px;
+  background: #ffffff;
+}
+
+ion-item {
+  --background: #f9f9f9;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  --inner-padding-end: 10px;
+}
+
+ion-label {
+  white-space: normal;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.shift-icon-hadir {
+  color: #2ecc71;
+  font-size: 1.3rem;
+  margin-right: 6px;
+}
+
+.shift-icon-absen {
+  color: #e74c3c;
+  font-size: 1.3rem;
+  margin-right: 6px;
+}
+
+@media screen and (max-width: 600px) {
+
+  .laporan-title {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    padding: 0 10px;
+  }
+
+  .laporan-tanggal {
+    font-size: 0.75rem;
+    padding: 0 10px;
+  }
+
+  .shift-info-header h2 {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .shift-info-header p {
+    font-size: 0.8rem;
+    padding: 0 10px;
+  }
+
+  span.shift-hadir,
+  span.shift-absen {
+    font-size: 0.9rem;
+    display: inline-block;
+    padding: 0 10px;
+  }
+
+  .laporan-divider {
+    margin: 16px 0;
+  }
+
+  ion-card {
+    padding: 8px;
+    margin: 10px;
+  }
+
+  ion-item {
+    margin: 5px 0;
+    padding: 8px;
+  }
+
+  ion-label {
+    font-size: 0.9rem;
+  }
+
+  .shift-icon-hadir,
+  .shift-icon-absen {
+    font-size: 1.1rem;
+    margin-right: 4px;
+  }
+}
+
+.shift-card {
+  border-left: 6px solid #ccc; 
+  margin-bottom: 12px;
+}
+
+.card-on {
+  border-left-color: #28a745; 
+  background-color: #eafbe8;
+}
+
+.card-off {
+  border-left-color: #dc3545; 
+  background-color: #fceaea;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+    background-color: #fff !important;
+    border-radius: 10px;
+}
+
+.filter-container input[type="date"] {
+  color: #000 !important;         
+  background-color: #fff !important; 
+}
+
+
+.form-control,
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}

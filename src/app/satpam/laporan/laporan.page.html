@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar  style="--min-height: 80px; --background: #26374D; --color: #ffffff;" class="minmal-toolbar">
+      <ion-title> Laporan </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content class="bg-white">
+  <div class="container">
+
+    <div class="tabs">
+      <button
+        (click)="switchTab('kunjungan')"
+        [class.active]="selectedTab === 'kunjungan'"
+        class="tab-button"
+      >
+        Kunjungan
+      </button>
+      <button
+        (click)="switchTab('shift')"
+        [class.active]="selectedTab === 'shift'"
+        class="tab-button"
+      >
+        Shift
+      </button>
+    </div>
+
+    <section>
+      <app-kunjungan *ngIf="selectedTab === 'kunjungan'"></app-kunjungan>
+      <app-shift *ngIf="selectedTab === 'shift'"></app-shift>
+    </section>
+
+  </div>
+</ion-content>

@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar style="--min-height: 80px; --background: #26374D; --color: #ffffff;" class="minmal-toolbar">
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card class="edit-card">
+    <ion-card-header>
+      <ion-card-title class="ion-card-title">Data Utama</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <!-- Input NIK -->
+      <ion-item>
+        <ion-label position="stacked"><strong class="label">NIK <span class="red-star">*</span></strong></ion-label>
+        <ion-input type="number" placeholder="Masukkan NIK 16 Digit"></ion-input>
+      </ion-item>
+
+      <!-- Input Nama Lengkap -->
+      <ion-item>
+        <ion-label position="stacked" class="label"><strong>Nama Lengkap <span class="red-star">*</span></strong></ion-label>
+        <ion-input type="text" placeholder="Masukkan Nama Lengkap"></ion-input>
+      </ion-item>
+
+      <!-- Input Alamat -->
+      <ion-item>
+        <ion-label position="stacked" class="label"><strong>Alamat <span class="red-star">*</span></strong></ion-label>
+        <ion-input type="text" placeholder="Masukkan Alamat"></ion-input>
+      </ion-item>
+
+      <!-- Input tempat lahir -->
+      <ion-item>
+        <ion-label position="stacked" class="label"><strong>Tempat Lahir <span class="red-star">*</span></strong></ion-label>
+        <ion-input type="text" placeholder="Masukkan Tempat Lahir"></ion-input>
+      </ion-item>
+
+      <!-- Input Tanggal Lahir -->
+      <ion-item>
+        <ion-label class="label-jk"><strong>Tanggal Lahir <span class="red-star">*</span></strong></ion-label>
+        <ion-input type="date" class="date"></ion-input>
+      </ion-item>
+
+      <!-- Input No. Handphone -->
+      <ion-item>
+        <ion-label position="stacked" class="label"><strong>No. Handphone <span class="red-star">*</span></strong></ion-label>
+        <ion-input type="number" placeholder="Masukkan No. HP"></ion-input>
+      </ion-item>
+
+      <!-- Input Email -->
+      <ion-item>
+        <ion-label position="stacked" class="label"><strong>Email <span class="red-star">*</span></strong></ion-label>
+        <ion-input type="text" placeholder="Masukkan Email"></ion-input>
+      </ion-item>
+
+      <!-- Input Password -->
+      <ion-item>
+        <ion-label position="stacked" class="label"><strong>Password <span class="red-star">*</span></strong></ion-label>
+        <ion-input type="password" placeholder="Masukkan Password" required></ion-input>
+      </ion-item>
+
+      <!-- Pilihan Jenis Kelamin -->
+      <ion-item>
+        <ion-label class="label-jk"><strong>Jenis Kelamin <span class="red-star">*</span></strong></ion-label>
+        <ion-select placeholder="Pilih Jenis Kelamin">
+          <ion-select-option value="pria">Pria</ion-select-option>
+          <ion-select-option value="wanita">Wanita</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+  <div class="btn-personal">
+    <ion-button expand="block" class="btn-info">Selesai</ion-button>
+    <ion-button (click)="dismissAndGoToProfile()">Tutup</ion-button>
+
+  </div>
+
+</ion-content>

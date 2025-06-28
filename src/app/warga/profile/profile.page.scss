@@ -1,0 +1,182 @@
+:host {
+    --primary-color: #1e1e2f;
+    --accent-color: #2563eb;
+    --gray-border: #ddd;
+    --light-blue: #38bdf8;
+}
+
+
+
+.card-profile {
+    border: 1px solid var(--gray-border);
+    border-radius: 10px;
+    padding: 16px;
+    background: #fff;
+    margin-bottom: 24px;
+}
+
+
+
+.info-text p {
+    font-size: 14px;
+    margin: 6px 0;
+
+    .badge-verifikasi {
+        background: var(--accent-color);
+        color: white;
+        font-size: 10px;
+        padding: 2px 6px;
+        border-radius: 6px;
+        margin-left: 6px;
+    }
+}
+
+.section-lainnya {
+    .lain-item {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-radius: 12px;
+        padding: 12px;
+        margin-bottom: 12px;
+        border: 1px solid var(--gray-border);
+        cursor: pointer;
+        transition: 0.2s ease;
+
+        &:hover {
+            background: #f9f9f9;
+        }
+
+        .item-icon {
+            font-size: 30px;
+            color: #26374D;
+            margin-right: 12px;
+        }
+
+
+        .item-info {
+            flex: 1;
+
+            h2 {
+                font-size: 16px;
+                margin: 0;
+            }
+
+            .status-belum {
+                font-size: 13px;
+                color: #e11d48;
+                margin: 2px 0 0;
+            }
+        }
+
+        .item-arrow {
+            font-size: 18px;
+            color: #888;
+        }
+    }
+}
+
+.photo-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--accent-color);
+        margin-bottom: 12px;
+    }
+
+    .btn-ganti-foto {
+        margin-bottom: 6px;
+        --border-radius: 8px;
+        --color: var(--accent-color);
+        font-size: 14px;
+    }
+
+    .note {
+        font-size: 12px;
+        color: #888;
+    }
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .info-item {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-weight: 600;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .value-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            span {
+                font-size: 14px;
+                color: #555;
+            }
+
+            .badge-verifikasi {
+                background: var(--accent-color);
+                color: white;
+                font-size: 10px;
+                padding: 2px 6px;
+                border-radius: 6px;
+            }
+        }
+    }
+}
+
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 20px 0 12px;
+}
+
+.custom-toolbar {
+    --background: #1e293b !important;
+    --color: white !important;
+    text-align: center;
+}
+
+.ion-text-center {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.profile-photo {
+    border: 2px solid #ccc; 
+}
+
+.profile-photo.default-icon {
+  font-size: 100px;
+  color: #ccc;
+}
+
+ion-input {
+  --padding-start: 0;
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.logout-button {
+  margin-top: 24px;
+}

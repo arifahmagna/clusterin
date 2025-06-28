@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar style="--min-height: 80px; --background: #26374D; --color: #ffffff;" class="minmal-toolbar">
+    <ion-title>Informasi Pribadi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  
+  <ion-card class="profile-card">
+    <ion-card-content>
+  
+       <h3>Informasi Umum</h3>
+      <ion-list>
+        <ion-item>
+          <ion-label>NIK</ion-label>
+          <ion-text>321525409876547</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Nama Lengkap</ion-label>
+          <ion-text>Delia Widianti</ion-text>
+        </ion-item>
+
+         <ion-item>
+          <ion-label>Alamat</ion-label>
+          <ion-text>Karawang, Jawa Barat</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Tempat Lahir</ion-label>
+          <ion-text class="not-completed">Belum dilengkapi</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Tanggal Lahir</ion-label>
+          <ion-text class="not-completed">Belum dilengkapi</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>No. Handphone</ion-label>
+          <ion-text>08976543627</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>email</ion-label>
+          <ion-text>Deliawidi1876&#64;gmail.com</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Password</ion-label>
+          <ion-text>**********</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Jenis Kelamin</ion-label>
+          <ion-text class="not-completed">Belum dilengkapi</ion-text>
+        </ion-item>
+       
+      </ion-list>
+    </ion-card-content>
+
+    <div class="button-container">
+      <ion-button color="primary" expand="full" (click)="openEditProfileModal()">Edit</ion-button>
+
+      <ion-button expand="full" color="medium" (click)="dismissModal()">Kembali</ion-button>
+
+    </div>
+  </ion-card>
+</ion-content>

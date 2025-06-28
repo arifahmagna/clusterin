@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar style="--min-height: 80px; --background: #26374D; --color: #ffffff;">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/tabs/home">
+        <ion-icon name="chevron-back-circle-outline" slot="icon-only" class="back-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Update Status Tamu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+ 
+  <ion-searchbar 
+    [(ngModel)]="searchTerm" 
+    placeholder="Cari Nama..." 
+    class="custom-searchbar"
+    (ionInput)="filterData()">
+  </ion-searchbar>
+
+  
+  <div class="statistik-section"> 
+    <div class="statistik-text">Statistik Monitoring Tamu</div>
+    <small class="statistik-p">Update tamu terakhir: {{ latestUpdate }}</small>
+  </div>
+
+ 
+  <div class="card summary">
+    <div>
+      <h2>{{ totalMasuk }}</h2>
+      <p>Tamu Masuk</p>
+    </div>
+    <div>
+      <h2>{{ totalKeluar }}</h2>
+      <p>Tamu Keluar</p>
+    </div>
+  </div>
+
+ 
+  <ion-segment [(ngModel)]="tab" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="masuk">
+      <ion-label>Tamu Masuk</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="keluar">
+      <ion-label>Tamu Keluar</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+ 
+  <app-masuk 
+    *ngIf="tab === 'masuk'" 
+    [tamuMasuk]="filteredMasuk"
+    (checkout)="handleCheckout($event)">
+  </app-masuk>
+
+  <app-keluar 
+    *ngIf="tab === 'keluar'" 
+    [tamuKeluar]="filteredKeluar">
+  </app-keluar>
+</ion-content>

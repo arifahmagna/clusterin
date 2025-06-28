@@ -1,0 +1,173 @@
+:host {
+  --primary-color: #1e1e2f;
+  --gray-border: #ddd;
+}
+
+.custom-toolbar {
+  --background: #1e293b !important;
+  --color: white !important;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 20px 0 12px;
+}
+
+.card-profile {
+  border: 1px solid var(--gray-border);
+  border-radius: 10px;
+  padding: 16px;
+  background: #fff;
+  margin-bottom: 24px;
+}
+
+.photo-wrapper {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.rumah-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  display: block;
+  margin: 0 auto 8px;
+}
+
+.btn-ganti-foto {
+  display: block;
+  margin: 0 auto;
+  --background: white;
+  --color: #007bff;
+  --border: 2x solid #007bff;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-item label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.value-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.value-row span {
+  font-size: 14px;
+  color: #555;
+}
+
+ion-input,
+ion-textarea,
+ion-select {
+  --padding-start: 0;
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.success-modal::part(content) {
+  --background: #fff;
+  border-radius: 16px;
+  height: 400px;
+  width: 90%;
+  max-width: 360px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.success-content {
+  text-align: center;
+  
+}
+
+.success-icon {
+  font-size: 64px;
+  color: #2ecc71; 
+  margin: 24px auto 16px;
+}
+
+.success-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  
+}
+
+.success-text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.btn-primary {
+  --background: #1e293b;
+  --color: white;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  margin-top: 50px;
+}
+
+.btn-secondary {
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.success-container {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 48px;
+  color: green;
+  margin-bottom: 16px;
+}
+
+.success-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.success-text {
+  margin-bottom: 16px;
+  font-size: 14px;
+}

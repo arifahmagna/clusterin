@@ -1,0 +1,103 @@
+
+
+ion-header {
+  --background: #1d4e89; 
+}
+
+ion-toolbar {
+  --background: transparent; 
+}
+
+ion-title {
+  color: #ffffff; 
+  font-weight: bold; 
+}
+
+
+.form-wrapper {
+  padding: 1rem; 
+}
+
+
+.text-title {
+  font-size: 1.2rem; 
+  font-weight: bold; 
+  color: #26374D; 
+  margin-bottom: 1rem; 
+  text-align: center; 
+}
+
+
+.tamu-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  padding: 1.5rem; 
+  background-color: #dde6ed; ; 
+  border: 1px solid #d1d5db;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Label untuk input */
+label {
+  font-weight: 600; 
+  color:  #536d82;  
+  margin-top: 1rem; 
+}
+
+
+ion-input {
+  margin-top: 0.5rem; 
+  --padding-start: 1rem; 
+  --padding-end: 1rem; 
+  --border-radius: 8px; 
+  --background: #f9fafb; 
+  --border-color:   #9db2bf; 
+  --color : #26374d;
+}
+
+
+.submit-btn {
+  margin-top: 1.5rem;
+  --background:  #536D82; 
+  --color: #ffffff; 
+  --border-radius: 8px; 
+  font-weight: bold; 
+  transition: background-color 0.3s ease; 
+}
+
+.submit-btn:hover {
+  --background: #1a3e6b; 
+.submit-btn:focus {
+  background: linear-gradient(90deg, #536d82 0%, #26374d 100%);
+  outline: none;
+}
+}
+
+
+.section-label {
+  font-size: 1.0rem; 
+  font-weight: bold; 
+  color: #26374d;
+  margin-top: 0.2rem; 
+  margin-bottom: 0.5rem; 
+}
+
+
+.minmal-toolbar {
+    --min-height: 90px;
+    --background: linear-gradient(135deg, #26374D, #1F2A40);
+    --color: #ffffff;
+    font-weight: bold;
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 0px 5px 5px;
+}
+
+ion-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+     margin-top: 1rem;
+}
+
+

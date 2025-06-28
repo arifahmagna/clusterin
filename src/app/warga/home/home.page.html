@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar> 
+    <div class="greeting-container">
+    <img src="assets/profile2.png" alt="Foto Profil" class="profile-img" />
+
+    <div class="greeting-text">
+      <p class="halo">Selamat datang,</p>
+      <h2 class="nama">{{ currentUser?.fullname?.split(' ')[0] || '...' }}</h2>
+    </div>
+
+    <ion-icon name="notifications-outline" class="notif-icon" (click)="goToNotifikasi()"></ion-icon>
+    <span class="badge-role">{{ currentUser?.role || '-' }}</span>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-bg">
+  <!-- Sweeper Component -->
+  <ion-card-content style="margin-top: 15px">
+    <app-sweeper></app-sweeper>
+  </ion-card-content>
+
+  <!-- Info Cards -->
+  <ion-card class="fitur-utama-container">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card class="info-card">
+            <ion-card-content class="card-content">
+              <div class="card-number-mohon">{{ permohonanList.length }}</div>
+              <h2 class="card-detail">Permohonan Aktif</h2>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="4">
+          <ion-card class="info-card">
+            <ion-card-content class="card-content">
+              <div class="card-number-aduan">{{ pengaduanList.length }}</div>
+              <h2 class="card-detail">Pengaduan Aktif</h2>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="4">
+          <ion-card class="info-card">
+            <ion-card-content class="card-content">
+              <div class="card-number-tamu">{{ guestList.length }}</div>
+              <h2 class="card-detail">Tamu Hari Ini</h2>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <!-- Aktivitas Terbaru -->
+  <ion-item-divider class="card-activity">
+    <ion-label class="label-activity"><strong>Aktivitas Terbaru</strong></ion-label>
+    <ion-button fill="clear" size="small" slot="end" (click)="goToNotifikasi()">Lihat Semua</ion-button>
+  </ion-item-divider>
+
+  <div class="activity-list">
+    <div class="activity-item" *ngFor="let item of aktivitasTerbaru">
+      <div class="activity-icon" [ngClass]="item.kategori.toLowerCase()">
+        <ion-icon [name]="getIconByJenis(item.kategori)"></ion-icon>
+      </div>
+
+      <div class="activity-info">
+        <div class="activity-title">{{ item.title }}</div>
+        <div class="activity-desc">{{ item.desc }}</div>
+
+        <div class="activity-footer">
+          <span class="badge" [ngClass]="getStatusClass(item.status)">
+            {{ item.status | titlecase }}
+          </span>
+          <span class="activity-time">{{ item.waktu | date:'short' }}</span>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</ion-content>

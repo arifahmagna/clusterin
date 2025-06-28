@@ -1,0 +1,58 @@
+.layanan-container {
+  padding: 16px;
+}
+
+.custom-toolbar {
+  --background: #1e293b !important;
+  --color: white !important;
+}
+
+.bold-font {
+  font-weight: bold;
+}
+
+.layanan-judul {
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #26374D;
+}
+
+.layanan-card {
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+
+  h3 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  p {
+    margin: 4px 0 0;
+    font-size: 14px;
+  }
+}
+
+.layanan-card:hover {
+  transform: scale(1.02);
+}
+
+.layanan-permohonan {
+  background-color: #26374D;
+  color: white;
+}
+
+.layanan-pengaduan {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  color: #1e293b;
+}
+
+.layanan-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}

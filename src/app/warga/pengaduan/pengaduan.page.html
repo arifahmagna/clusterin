@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/warga/tabs/layanan"></ion-back-button>
+    <div class="centered-title custom-background">Layanan Pengaduan</div>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content class="ion-padding">
+
+  <div class="section-header">
+    <h2 class="custom-background">Riwayat Pengaduan</h2>
+  </div>
+
+  <div class="filter-status">
+    <label class="custom-background">Filter Status:</label>
+    <div class="select-wrapper custom-background">
+      <ion-select [(ngModel)]="selectedStatus" interface="popover">
+        <ion-select-option value="Semua">Semua</ion-select-option>
+        <ion-select-option value="Menunggu">Menunggu</ion-select-option>
+        <ion-select-option value="Disetujui">Disetujui</ion-select-option>
+        <ion-select-option value="Ditolak">Ditolak</ion-select-option>
+      </ion-select>
+    </div>
+  </div>
+
+  
+
+  <ion-card *ngFor="let item of filteredPengaduan()" [ngStyle]="{ 'border-left': '6px solid ' + getBorderColor(item.status) }">
+    <ion-card-content>
+      <h3>{{ item.judul }}</h3>
+      <p>Diajukan {{ item.created_at | date:'short'}}</p>
+
+      <p>Status:
+        <span [ngStyle]="{ color: getBorderColor(item.status) }">
+          {{ item.status }}
+        </span>
+      </p>
+      <p >Deskripsi: {{ item.deskripsi }}</p>
+      <p >Tanggapan RT: {{ item.reply }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" class="btn-tambah" routerLink="/form-pengaduan">
+    <ion-icon slot="start" name="add"></ion-icon>
+    Tambah Pengaduan
+  </ion-button>
+
+</ion-content>
